@@ -1,0 +1,93 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    // Heater
+    {
+        name    holeCellSet;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.002      0.0015  -0.003);
+                p2          (0.002      0.0015  0.006);
+                radius      0.04e-3;
+        }
+    }
+    
+    {
+        name    holeCellSet;
+        type    cellSet;
+        action  add;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.0345      0.0015  -0.003);
+                p2          (0.0345      0.0015  0.006);
+                radius      0.04e-3;
+        }
+    }
+    
+    {
+        name    holes;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
+
+    {
+        name    electrode;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
+
+        {
+        name    fluid;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
+
+        {
+        name    intrusion;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
+);
+
+
+// ************************************************************************* //
