@@ -19,6 +19,111 @@ actions
 (
     // TAILORING
     {
+        name    electrodeHole;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.002      0.0015  0);
+                p2          (0.002      0.0015  0.006);
+                radius      0.04e-3;
+        }
+    }
+    {
+        name    electrodeHole;
+        type    cellSet;
+        action  add;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.0345      0.0015  0);
+                p2          (0.0345      0.0015  0.006);
+                radius      0.04e-3;
+        }
+    }
+    {
+        name    electrode;
+        type    cellZoneSet;
+        action  add;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set electrodeHole;
+        }
+    }
+
+    {
+        name    fluidHole;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.002      0.0015  -0.003);
+                p2          (0.002      0.0015  -0.0005);
+                radius      0.04e-3;
+        }
+    }
+    {
+        name    fluidHole;
+        type    cellSet;
+        action  add;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.0345      0.0015  -0.003);
+                p2          (0.0345      0.0015  -0.0005);
+                radius      0.04e-3;
+        }
+    }
+    {
+        name    fluid;
+        type    cellZoneSet;
+        action  add;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set fluidHole;
+        }
+    }
+
+    {
+        name    intrusionHole;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.001992      0.0015  -0.0005);
+                p2          (0.001992      0.0015  0);
+                radius      0.04e-3;
+        }
+    }
+    {
+        name    intrusionHole;
+        type    cellSet;
+        action  add;
+        source  cylinderToCell;
+        sourceInfo
+        {
+                p1          (0.000345      0.0015  -0.0005);
+                p2          (0.000345      0.0015  0);
+                radius      0.04e-3;
+        }
+    }
+    {
+        name    intrusion;
+        type    cellZoneSet;
+        action  add;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set intrusionHole;
+        }
+    }
+
+    {
         name    holeCellSet;
         type    cellSet;
         action  new;
@@ -50,7 +155,38 @@ actions
             set holeCellSet;
         }
     }
+    {
+        name    electrode;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
 
+        {
+        name    fluid;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
+
+        {
+        name    intrusion;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
  
 );
 
