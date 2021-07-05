@@ -1,0 +1,91 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.0
+Exec   : topoSet -dict system/topoSetDict2
+Date   : Apr 01 2021
+Time   : 10:34:37
+Host   : "yavin4"
+PID    : 6066
+I/O    : uncollated
+Case   : /home/sole/OpenFOAM/sole-5.0/run/VRFB_OF_tailoring/01_cases/vrfb_elec_tailor_ft_h_f_test
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 1
+
+Reading topoSetDict
+
+Time = 1
+    mesh not changed.
+Created cellSet electrodeHole
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.002 0.0015 0), p2 = (0.002 0.0015 0.006) and radius = 4e-05
+    cellSet electrodeHole now size 0
+Read set cellSet electrodeHole with size 0
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.0345 0.0015 0), p2 = (0.0345 0.0015 0.006) and radius = 4e-05
+    cellSet electrodeHole now size 0
+Read set cellZoneSet electrode with size 123569
+    Applying source setToCellZone
+    Adding all cells from cellSet electrodeHole ...
+    cellZoneSet electrode now size 123569
+Created cellSet fluidHole
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.002 0.0015 -0.003), p2 = (0.002 0.0015 -0.0005) and radius = 4e-05
+    cellSet fluidHole now size 0
+Read set cellSet fluidHole with size 0
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.0345 0.0015 -0.003), p2 = (0.0345 0.0015 -0.0005) and radius = 4e-05
+    cellSet fluidHole now size 0
+Read set cellZoneSet fluid with size 33906
+    Applying source setToCellZone
+    Adding all cells from cellSet fluidHole ...
+    cellZoneSet fluid now size 33906
+Created cellSet intrusionHole
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.001992 0.0015 -0.0005), p2 = (0.001992 0.0015 0) and radius = 4e-05
+    cellSet intrusionHole now size 0
+Read set cellSet intrusionHole with size 0
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.000345 0.0015 -0.0005), p2 = (0.000345 0.0015 0) and radius = 4e-05
+    cellSet intrusionHole now size 0
+Read set cellZoneSet intrusion with size 16740
+    Applying source setToCellZone
+    Adding all cells from cellSet intrusionHole ...
+    cellZoneSet intrusion now size 16740
+Created cellSet holeCellSet
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.0343 0.00145 -0.003) (0.0346 0.00154 0.006))
+    cellSet holeCellSet now size 208
+Read set cellSet holeCellSet with size 208
+    Applying source boxToCell
+    Adding cells with center within boxes 1((0.00187 0.00145 -0.003) (0.0021 0.00154 0.006))
+    cellSet holeCellSet now size 416
+Created cellZoneSet holes
+    Applying source setToCellZone
+    Adding all cells from cellSet holeCellSet ...
+    cellZoneSet holes now size 416
+Read set cellZoneSet electrode with size 123569
+    Applying source setToCellZone
+    Removing all cells from cellSet holeCellSet ...
+    cellZoneSet electrode now size 123569
+Read set cellZoneSet fluid with size 33906
+    Applying source setToCellZone
+    Removing all cells from cellSet holeCellSet ...
+    cellZoneSet fluid now size 33906
+Read set cellZoneSet intrusion with size 16740
+    Applying source setToCellZone
+    Removing all cells from cellSet holeCellSet ...
+    cellZoneSet intrusion now size 16740
+End
+

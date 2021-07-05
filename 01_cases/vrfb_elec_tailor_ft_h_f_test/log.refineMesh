@@ -1,0 +1,52 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.0
+Exec   : refineMesh -dict system/refineMeshDict
+Date   : Apr 01 2021
+Time   : 10:34:38
+Host   : "yavin4"
+PID    : 6071
+I/O    : uncollated
+Case   : /home/sole/OpenFOAM/sole-5.0/run/VRFB_OF_tailoring/01_cases/vrfb_elec_tailor_ft_h_f_test
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 1
+
+Mesh edge statistics:
+    x aligned :  number:182832	minLen:5.84669e-05	maxLen:0.0013674
+    y aligned :  number:183504	minLen:2.08378e-05	maxLen:0.00093785
+    z aligned :  number:182400	minLen:2.4003e-05	maxLen:0.00039606
+    other     :  number:0	minLen:1e+15	maxLen:-1e+15
+
+Refining according to "system/refineMeshDict"
+
+Read 416 cells from cellSet "1/polyMesh/sets/holes"
+
+Global Coordinate system:
+     normal : (0 0 1)
+     tan1   : (1 0 0)
+     tan2   : (0 1 0)
+
+Writing refined cells (1664) to cellSet "2/polyMesh/sets/refinedCells"
+
+Writing map from new to old cell to "/home/sole/OpenFOAM/sole-5.0/run/VRFB_OF_tailoring/01_cases/vrfb_elec_tailor_ft_h_f_test/2/polyMesh/cellMap"
+
+Mesh edge statistics:
+    x aligned :  number:184316	minLen:5.8085e-05	maxLen:0.0013674
+    y aligned :  number:184988	minLen:2.08378e-05	maxLen:0.00093785
+    z aligned :  number:184064	minLen:2.4003e-05	maxLen:0.00039606
+    other     :  number:0	minLen:1e+15	maxLen:-1e+15
+
+End
+
