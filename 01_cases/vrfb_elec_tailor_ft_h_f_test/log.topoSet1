@@ -1,0 +1,55 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.0
+Exec   : topoSet
+Date   : Apr 01 2021
+Time   : 10:34:34
+Host   : "yavin4"
+PID    : 6056
+I/O    : uncollated
+Case   : /home/sole/OpenFOAM/sole-5.0/run/VRFB_OF_tailoring/01_cases/vrfb_elec_tailor_ft_h_f_test
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet holeCellSet
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.001992 0.0015 -0.003), p2 = (0.001992 0.0015 0.006) and radius = 4e-05
+    cellSet holeCellSet now size 52
+Read set cellSet holeCellSet with size 52
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0.0345 0.0015 -0.003), p2 = (0.0345 0.0015 0.006) and radius = 4e-05
+    cellSet holeCellSet now size 104
+Created cellZoneSet holes
+    Applying source setToCellZone
+    Adding all cells from cellSet holeCellSet ...
+    cellZoneSet holes now size 104
+Read set cellZoneSet electrode with size 123627
+    Applying source setToCellZone
+    Removing all cells from cellSet holeCellSet ...
+    cellZoneSet electrode now size 123569
+Read set cellZoneSet fluid with size 33934
+    Applying source setToCellZone
+    Removing all cells from cellSet holeCellSet ...
+    cellZoneSet fluid now size 33906
+Read set cellZoneSet intrusion with size 16758
+    Applying source setToCellZone
+    Removing all cells from cellSet holeCellSet ...
+    cellZoneSet intrusion now size 16740
+End
+

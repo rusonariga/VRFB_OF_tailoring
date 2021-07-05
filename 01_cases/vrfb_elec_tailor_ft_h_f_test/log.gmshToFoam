@@ -1,0 +1,90 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 5.0
+Exec   : gmshToFoam VRFB_FT_H_tailoring.msh
+Date   : Apr 01 2021
+Time   : 10:34:32
+Host   : "yavin4"
+PID    : 6055
+I/O    : uncollated
+Case   : /home/sole/OpenFOAM/sole-5.0/run/VRFB_OF_tailoring/01_cases/vrfb_elec_tailor_ft_h_f_test
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Starting to read mesh format at line 2
+Read format version 2.2  ascii 0
+
+Starting to read physical names at line 5
+Physical names:8
+    Surface 1	inlet
+    Surface 2	outlet
+    Surface 3	walls_channel
+    Surface 4	walls_porous
+    Surface 5	walls_intrusion
+    Volume 6	fluid
+    Volume 7	electrode
+    Volume 8	intrusion
+
+Starting to read points at line 16
+Vertices to be read:186640
+Vertices read:186640
+
+Starting to read cells at line 186659
+Cells to be read:198501
+
+Mapping region 3 to Foam patch 0
+Mapping region 4 to Foam patch 1
+Mapping region 1 to Foam patch 2
+Mapping region 5 to Foam patch 3
+Mapping region 2 to Foam patch 4
+Mapping region 6 to Foam cellZone 0
+Mapping region 8 to Foam cellZone 1
+Mapping region 7 to Foam cellZone 2
+Cells:
+    total:174319
+    hex  :174319
+    prism:0
+    pyr  :0
+    tet  :0
+
+CellZones:
+Zone	Size
+    0	33934
+    1	16758
+    2	123627
+
+Skipping tag  at line 385163
+Patch 0 gets name walls_channel
+Patch 1 gets name walls_porous
+Patch 2 gets name inlet
+Patch 3 gets name walls_intrusion
+Patch 4 gets name outlet
+
+--> FOAM Warning : 
+    From function Foam::polyMesh::polyMesh(const Foam::IOobject&, const Foam::Xfer<Foam::Field<Foam::Vector<double> > >&, const cellShapeList&, const faceListList&, const wordList&, const wordList&, const Foam::word&, const Foam::word&, const wordList&, bool)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 595
+    Found 24182 undefined faces in mesh; adding to default patch.
+Finding faces of patch 0
+Finding faces of patch 1
+Finding faces of patch 2
+Finding faces of patch 3
+Finding faces of patch 4
+
+FaceZones:
+Zone	Size
+
+Writing zone 0 to cellZone fluid and cellSet
+Writing zone 1 to cellZone intrusion and cellSet
+Writing zone 2 to cellZone electrode and cellSet
+End
+
