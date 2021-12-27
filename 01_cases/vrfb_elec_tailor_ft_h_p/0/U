@@ -7,49 +7,53 @@
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
-    version     2.0;
-    format      binary;
-    class       volVectorField;
-    location    "1";
-    object      U;
+    version 2.0;
+    format binary;
+    class volVectorField;
+    location "1";
+    object U;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
+dimensions [0 1 -1 0 0 0 0];
 
-internalField   uniform (0 0 0);
+internalField uniform (0 0 0);
 
 boundaryField
 {
-    walls_porous
+    wallsPorous
     {
-        type            slip;
+        type slip;
+        value uniform (0 0 0);
     }
-    walls_channel
+    walls
     {
-        //type            slip;
-         type            noSlip;
-    }
-    
-    walls_intrusion
-    {
-        //type            slip;
-         type            noSlip;
+        type noSlip;
     }
 
-    outlet
+    outlet1
     {
-        type            zeroGradient;
-        type            inletOutlet;
-        inletValue      uniform (0 0 0);
-        value           uniform (0 0 0);
+        type inletOutlet;
+        inletValue uniform (0 0 0);
+        value uniform (0 0 0);
     }
+
+    outlet2
+    {
+        type inletOutlet;
+        inletValue uniform (0 0 0);
+        value uniform (0 0 0);
+    }
+
     inlet
     {
-        type                    flowRateInletVelocity;
-        volumetricFlowRate      constant 6e-07;
+        type flowRateInletVelocity;
+        volumetricFlowRate constant 6e-07;
+    }
+
+    defaultFaces
+    {
+        type zeroGradient;
     }
 }
-
-
 // ************************************************************************* //

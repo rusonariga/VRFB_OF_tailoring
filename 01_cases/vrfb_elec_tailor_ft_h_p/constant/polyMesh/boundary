@@ -15,42 +15,48 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-5
+6
 (
-    walls_channel
-    {
-        type            patch;
-        physicalType    patch;
-        nFaces          7820;
-        startFace       510866;
-    }
-    walls_porous
-    {
-        type            patch;
-        physicalType    patch;
-        nFaces          14552;
-        startFace       518686;
-    }
     inlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          437;
-        startFace       533238;
+        nFaces          171;
+        startFace       209611;
     }
-    walls_intrusion
+    wallsPorous
     {
         type            patch;
         physicalType    patch;
-        nFaces          936;
-        startFace       533675;
+        nFaces          6251;
+        startFace       209782;
     }
-    outlet
+    outlet2
     {
         type            patch;
         physicalType    patch;
-        nFaces          437;
-        startFace       534611;
+        nFaces          423;
+        startFace       216033;
+    }
+    outlet1
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          423;
+        startFace       216456;
+    }
+    walls
+    {
+        type            patch;
+        physicalType    patch;
+        nFaces          5297;
+        startFace       216879;
+    }
+    defaultFaces
+    {
+        type            patch;
+        nFaces          585;
+        startFace       222176;
     }
 )
 

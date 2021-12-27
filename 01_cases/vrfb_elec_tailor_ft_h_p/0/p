@@ -21,26 +21,33 @@ internalField   uniform 0;
 
 boundaryField
 {
-    walls_porous
+    wallsPorous
     {
         type            zeroGradient;
     }
-    walls_channel
-    {
-        type            zeroGradient;
-    }
-
-    walls_intrusion
+    walls
     {
         type            zeroGradient;
     }
 
-    outlet
+    outlet1
     {
         type            fixedValue;
-        value           uniform 0;
+        value           $internalField;
     }
+
+    outlet2
+    {
+        type            fixedValue;
+        value           $internalField;
+    }
+
     inlet
+    {
+        type            zeroGradient;
+    }
+
+    defaultFaces
     {
         type            zeroGradient;
     }

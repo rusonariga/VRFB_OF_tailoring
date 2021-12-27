@@ -17,7 +17,7 @@ FoamFile
 
 actions
 (
-    //HOLES
+    // Heater
     {
         name    holeCellSet;
         type    cellSet;
@@ -25,9 +25,9 @@ actions
         source  cylinderToCell;
         sourceInfo
         {
-                p1          (0.0015      0.0015  -0.003);
-                p2          (0.0015      0.0015  0.00032);
-                radius      0.05e-3;
+                p1          (0.001992      0.0015  -0.003);
+                p2          (0.001992      0.0015  0.006);
+                radius      0.04e-3;
         }
     }
     
@@ -39,10 +39,11 @@ actions
         sourceInfo
         {
                 p1          (0.0345      0.0015  -0.003);
-                p2          (0.0345      0.0015  0.00032);
-                radius      0.00005;
+                p2          (0.0345      0.0015  0.006);
+                radius      0.04e-3;
         }
     }
+    
     {
         name    holes;
         type    cellZoneSet;
@@ -54,6 +55,38 @@ actions
         }
     }
 
+    {
+        name    electrode;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
+
+        {
+        name    fluid;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
+
+        {
+        name    intrusion;
+        type    cellZoneSet;
+        action  delete;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set holeCellSet;
+        }
+    }
 );
 
 

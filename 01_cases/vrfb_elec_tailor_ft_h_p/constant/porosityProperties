@@ -23,8 +23,8 @@ electrode
 
     DarcyForchheimerCoeffs
     {
-        d   (1.35e10        1.35e10         1.35e10);
-        f   (6.4e4          6.4e4           6.4e4);
+        d   (3.7e10        3.7e10         3.7e10);
+        f   (0          0           0);
 
         coordinateSystem
         {
